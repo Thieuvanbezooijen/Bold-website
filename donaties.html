@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Donaties voor Studievereniging BOLD - Steun onze CMD studentenvereniging en help ons activiteiten en evenementen te organiseren.">
+    <meta name="keywords" content="donaties, steun, CMD, Avans, Breda, studentenvereniging, BOLD, activiteiten">
+    <meta name="author" content="Studievereniging BOLD">
+    <meta property="og:title" content="Donaties - Studievereniging BOLD">
+    <meta property="og:description" content="Steun onze CMD studentenvereniging en help ons activiteiten te organiseren">
+    <meta property="og:type" content="website">
+    <title>Donaties - Studievereniging BOLD</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        // Prevent flash during page transition - must run immediately before any rendering
+        (function() {
+            if (sessionStorage.getItem('pageTransitioning') === 'true') {
+                document.documentElement.style.overflow = 'hidden';
+                document.documentElement.style.visibility = 'hidden';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay" id="page-transition-overlay">
+        <img src="img/BOLD_logo_wit.png" alt="BOLD" class="page-transition-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Studievereniging BOLD - Home">
+                    <img src="img/BOLD_logo_wit_zonder_tekst.png" alt="BOLD Logo" class="logo-image">
+                    <span class="logo-text">BOLD</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="introkamp.html" class="nav-link">Introkamp</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planning.html" class="nav-link">Planning</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="fotoboek.html" class="nav-link">Fotoboek</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="leden.html" class="nav-link">Leden</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donaties.html" class="nav-link active" aria-current="page">Donaties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" role="banner">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">Steun BOLD</h1>
+                    <p class="page-hero-subtitle">Help ons activiteiten en evenementen te organiseren voor CMD studenten</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Donate Section -->
+        <section class="why-donate" aria-labelledby="why-donate-title">
+            <div class="container">
+                <h2 id="why-donate-title" class="section-title">Waarom doneren aan BOLD?</h2>
+                <div class="donate-reasons">
+                    <!-- <div class="reason-card">
+                        <div class="reason-icon">🎓</div>
+                        <h3>Onderwijs & Ontwikkeling</h3>
+                        <p>We organiseren workshops, masterclasses en lezingen die CMD studenten helpen groeien als creatieve professionals.</p>
+                    </div> -->
+                    <div class="reason-card">
+                        <div class="reason-icon">🤝</div>
+                        <h3>Community Building</h3>
+                        <p>We creëren een sterke community waar studenten elkaar kunnen ontmoeten, netwerken en samenwerken.</p>
+                    </div>
+                    <!-- <div class="reason-card">
+                        <div class="reason-icon">💡</div>
+                        <h3>Innovatie & Creativiteit</h3>
+                        <p>We stimuleren creativiteit en innovatie door het organiseren van challenges, hackathons en creatieve projecten.</p>
+                    </div> -->
+                    <div class="reason-card">
+                        <div class="reason-icon">🌍</div>
+                        <h3>Toegankelijkheid</h3>
+                        <p>We zorgen ervoor dat alle activiteiten toegankelijk zijn voor alle studenten, ongeacht hun financiële situatie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Impact -->
+        <section class="donation-impact" aria-labelledby="impact-title">
+            <div class="container">
+                <h2 id="impact-title" class="section-title">Jouw donatie maakt het verschil</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-amount">€25</span>
+                        <h3>Kleine activiteit materiaal</h3>
+                        <p>Dekt de kosten voor materialen en tools tijdens een kleine activiteit</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-amount">€50</span>
+                        <h3>Student lunch</h3>
+                        <p>Verzorgt lunch voor 10 studenten tijdens een evenement</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-amount">€100</span>
+                        <h3>Expert spreker</h3>
+                        <p>Biedt een honorarium voor een professionele spreker</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-amount">€250</span>
+                        <h3>Studiereis</h3>
+                        <p>Draagt bij aan de kosten van een studiereis.</p>
+                    </div>
+                    <!-- <div class="impact-item">
+                        <span class="impact-amount">€500</span>
+                        <h3>Groot evenement</h3>
+                        <p>Helpt bij het organiseren van een groot evenement zoals Introkamp</p>
+                    </div> -->
+                    <div class="impact-item">
+                        <span class="impact-amount">€500+</span>
+                        <h3>Introkamp</h3>
+                        <p>Draagt bij aan de kosten van het Introkamp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Form -->
+        <section class="donation-form-section" aria-labelledby="donation-form-title">
+            <div class="container">
+                <h2 id="donation-form-title" class="section-title">Maak een donatie</h2>
+                <div class="donation-container">
+                    <div class="donation-info">
+                        <h3>Hoe werkt het?</h3>
+                        <ol class="donation-steps">
+                            <li>Kies het bedrag dat je wilt doneren</li>
+                            <li>Vul je contactgegevens in</li>
+                            <li>Kies je betaalmethode (iDEAL, creditcard, of bankoverschrijving)</li>
+                            <li>Bevestig je donatie</li>
+                            <li>Je ontvangt een bevestiging per e-mail</li>
+                        </ol>
+                        
+                        <div class="donation-benefits">
+                            <h4>Voordelen van doneren:</h4>
+                            <ul>
+                                <li>✓ Je steunt direct CMD studenten</li>
+                                <li>✓ Je ontvangt updates over onze activiteiten</li>
+                                <li>✓ Je kunt je donatie aftrekken van de belasting (ANBI-status)</li>
+                                <li>✓ Je helpt bij het toegankelijk maken van onderwijs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <form class="donation-form" id="donation-form">
+                        <h3>Donatieformulier</h3>
+                        
+                        <div class="donation-amounts">
+                            <h4>Kies een bedrag:</h4>
+                            <div class="amount-buttons">
+                                <button type="button" class="amount-btn" data-amount="25">€25</button>
+                                <button type="button" class="amount-btn" data-amount="50">€50</button>
+                                <button type="button" class="amount-btn" data-amount="100">€100</button>
+                                <button type="button" class="amount-btn" data-amount="250">€250</button>
+                                <button type="button" class="amount-btn" data-amount="500">€500</button>
+                            </div>
+                            <div class="custom-amount">
+                                <label for="custom-amount">Of voer een eigen bedrag in:</label>
+                                <input type="number" id="custom-amount" name="customAmount" min="5" step="5" placeholder="Minimaal €5">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donor-name">Naam *</label>
+                            <input type="text" id="donor-name" name="donorName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donor-email">E-mailadres *</label>
+                            <input type="email" id="donor-email" name="donorEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donor-company">Bedrijf/Organisatie</label>
+                            <input type="text" id="donor-company" name="donorCompany" placeholder="Optioneel">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donation-message">Bericht bij donatie</label>
+                            <textarea id="donation-message" name="donationMessage" rows="3" placeholder="Laat een bericht achter bij je donatie (optioneel)"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="anonymous" name="anonymous">
+                                <span class="checkmark"></span>
+                                Donatie anoniem maken
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Updates ontvangen over BOLD activiteiten
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                Ik ga akkoord met de <a href="#" target="_blank">algemene voorwaarden</a> en <a href="#" target="_blank">privacyverklaring</a> *
+                            </label>
+                        </div>
+                        
+                        <div class="donation-total">
+                            <h4>Totaalbedrag: <span id="total-amount">€0</span></h4>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Donatie voltooien
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternative Donation Methods -->
+        <section class="alternative-donations" aria-labelledby="alternative-title">
+            <div class="container">
+                <h2 id="alternative-title" class="section-title">Andere manieren om te doneren</h2>
+                <div class="alternative-methods">
+                    <div class="method-card">
+                        <h3>Bankoverschrijving</h3>
+                        <p>Maak een overboeking naar ons rekeningnummer:</p>
+                        <div class="bank-details">
+                            <p><strong>Rekeningnummer:</strong> NL91 ABNA 0123 4567 89</p>
+                            <p><strong>Ten name van:</strong> Studievereniging BOLD</p>
+                            <p><strong>Onderwerp:</strong> Donatie BOLD</p>
+                        </div>
+                    </div>
+                    <div class="method-card">
+                        <h3>Bedrijfsdonatie</h3>
+                        <p>Interesse in een bedrijfsdonatie of samenwerking?</p>
+                        <a href="contact.html" class="btn btn-outline">Neem contact op</a>
+                    </div>
+                    <div class="method-card">
+                        <h3>Materiaal donatie</h3>
+                        <p>Heb je materialen, expertise of andere middelen die je wilt doneren?</p>
+                        <a href="contact.html" class="btn btn-outline">Neem contact op</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Bedankt voor je steun!</h2>
+                    <p class="cta-description">
+                        Elke donatie, hoe klein ook, helpt ons om CMD studenten te verbinden met elkaar en 
+                        een sterke creatieve community op te bouwen.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-primary" aria-label="Neem contact op">
+                            Vragen over doneren?
+                        </a>
+                        <a href="planning.html" class="btn btn-secondary" aria-label="Bekijk onze activiteiten">
+                            Bekijk onze activiteiten
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Studievereniging BOLD</h3>
+                    <p class="footer-description">
+                        Dé studentenvereniging voor CMD studenten aan Avans Hogeschool Breda.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navigatie</h4>
+                    <ul class="footer-links">
+                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
+                        <li><a href="leden.html">Leden</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contactformulier</a></li>
+                        <li><a href="donaties.html">Donaties</a></li>
+                        <li><a href="mailto:studieverenigingbold@gmail.com">studieverenigingbold@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studievereniging BOLD. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

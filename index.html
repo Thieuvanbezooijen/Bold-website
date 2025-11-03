@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Studievereniging BOLD - De studentenvereniging voor CMD studenten aan Avans Hogeschool Breda. Ontdek onze activiteiten, planning en word lid van onze creatieve community.">
+    <meta name="keywords" content="CMD, Avans, Breda, studentenvereniging, BOLD, creatief, design, communicatie">
+    <meta name="author" content="Studievereniging BOLD">
+    <meta property="og:title" content="Studievereniging BOLD - CMD Studentenvereniging">
+    <meta property="og:description" content="De creatieve studentenvereniging voor CMD studenten aan Avans Hogeschool Breda">
+    <meta property="og:type" content="website">
+    <title>Studievereniging BOLD - CMD Studentenvereniging</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        // Prevent flash during page transition - must run immediately before any rendering
+        (function() {
+            if (sessionStorage.getItem('pageTransitioning') === 'true') {
+                document.documentElement.style.overflow = 'hidden';
+                document.documentElement.style.visibility = 'hidden';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay" id="page-transition-overlay">
+        <img src="img/BOLD_logo_wit.png" alt="BOLD" class="page-transition-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Studievereniging BOLD - Home">
+                    <img src="img/BOLD_logo_wit_zonder_tekst.png" alt="BOLD Logo" class="logo-image">
+                    <span class="logo-text">BOLD</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="introkamp.html" class="nav-link">Introkamp</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planning.html" class="nav-link">Planning</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="fotoboek.html" class="nav-link">Fotoboek</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="leden.html" class="nav-link">Leden</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donaties.html" class="nav-link">Donaties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" role="banner">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hero-title-line">Studievereniging</span>
+                        <span class="hero-title-bold">BOLD</span>
+                        <span class="hero-title-subtitle">CMD Studentenvereniging</span>
+                    </h1>
+                    <p class="hero-description">
+                        De creatieve community voor Communication & Multimedia Design studenten 
+                        aan Avans Hogeschool Breda. Ontdek, leer en groei samen.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="introkamp.html" class="btn btn-primary" aria-label="Meld je aan voor Introkamp">
+                            Meld je aan voor Introkamp
+                        </a>
+                        <a href="planning.html" class="btn btn-secondary" aria-label="Bekijk onze planning">
+                            Bekijk Planning
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-grid">
+                        <!-- Add images by placing <img> tags inside grid-item divs -->
+                        <!-- Example: <div class="grid-item"><img src="img/your-image.jpg" alt="Description"></div> -->
+                        <div class="grid-item"> <img src="img/BOLD_logo_wit.png" alt="Description"> </div>
+                        <div class="grid-item"> <img src="img/BOLD_logo_wit.png" alt="Description"> </div>
+                        <div class="grid-item"> <img src="img/BOLD_logo_wit.png" alt="Description"> </div>
+                        <div class="grid-item"> <img src="img/BOLD_logo_wit.png" alt="Description"> </div>
+                        <div class="grid-item"> <img src="img/BOLD_logo_wit.png" alt="Description"> </div>
+                        <div class="grid-item"> <img src="img/BOLD_logo_wit.png" alt="Description"> </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="quick-links" aria-labelledby="quick-links-title">
+            <div class="container">
+                <h2 id="quick-links-title" class="section-title">Ontdek BOLD</h2>
+                <div class="quick-links-grid">
+                    <a href="introkamp.html" class="quick-link-card" aria-label="Introkamp informatie">
+                        <div class="card-icon">🎯</div>
+                        <h3>Introkamp</h3>
+                        <p>Meld je aan voor onze introductiekamp en maak kennis met je medestudenten</p>
+                    </a>
+                    <a href="planning.html" class="quick-link-card" aria-label="Jaarplanning bekijken">
+                        <div class="card-icon">📅</div>
+                        <h3>Jaarplanning</h3>
+                        <p>Bekijk alle activiteiten en evenementen die we dit jaar organiseren</p>
+                    </a>
+                    <!-- <a href="fotoboek.html" class="quick-link-card" aria-label="Fotoboek bekijken">
+                        <div class="card-icon">📸</div>
+                        <h3>Fotoboek</h3>
+                        <p>Herbeleef de mooiste momenten van onze activiteiten en evenementen</p>
+                    </a> -->
+                    <a href="leden.html" class="quick-link-card" aria-label="Ledenlijst bekijken">
+                        <div class="card-icon">👥</div>
+                        <h3>Ledenlijst</h3>
+                        <p>Ontmoet de leden van onze vereniging en maak nieuwe connecties</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 id="about-title" class="section-title">Over BOLD</h2>
+                        <p class="about-description">
+                            Studievereniging BOLD is de studentenvereniging voor Communication & 
+                            Multimedia Design studenten aan Avans Hogeschool Breda. We organiseren 
+                            activiteiten, evenementen en workshops die je helpen groeien als creatieve 
+                            professional.
+                        </p>
+                        <p class="about-description">
+                            Van introductiekampen tot netwerkborrels, van workshops tot studiereizen - 
+                            bij BOLD vind je altijd wel iets dat bij je past. Word lid en maak deel 
+                            uit van onze creatieve community!
+                        </p>
+                        <a href="contact.html" class="btn btn-outline" aria-label="Neem contact op">
+                            Word lid van BOLD
+                        </a>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Actieve leden</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Activiteiten per jaar</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Jaar ervaring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Klaar om deel uit te maken van BOLD?</h2>
+                    <p class="cta-description">
+                        Meld je aan voor onze activiteiten of word lid van onze vereniging. 
+                        Samen maken we van je studietijd een onvergetelijke ervaring.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="introkamp.html" class="btn btn-primary" aria-label="Meld je aan voor Introkamp">
+                            Meld je aan
+                        </a>
+                        <a href="donaties.html" class="btn btn-secondary" aria-label="Steun BOLD met een donatie">
+                            Steun BOLD
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Studievereniging BOLD</h3>
+                    <p class="footer-description">
+                        Dé studentenvereniging voor CMD studenten aan Avans Hogeschool Breda.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navigatie</h4>
+                    <ul class="footer-links">
+                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
+                        <li><a href="leden.html">Leden</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contactformulier</a></li>
+                        <li><a href="donaties.html">Donaties</a></li>
+                        <li><a href="mailto:studieverenigingbold@gmail.com">studieverenigingbold@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studievereniging BOLD. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Grid Item Image Modal -->
+    <div class="grid-item-modal" id="grid-item-modal">
+        <div class="grid-item-modal-backdrop" id="grid-item-modal-backdrop"></div>
+        <div class="grid-item-modal-content">
+            <img id="grid-item-modal-image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

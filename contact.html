@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Studievereniging BOLD - Neem contact op met onze CMD studentenvereniging voor vragen, aanmeldingen of samenwerkingen.">
+    <meta name="keywords" content="contact, CMD, Avans, Breda, studentenvereniging, BOLD, vragen, aanmelding">
+    <meta name="author" content="Studievereniging BOLD">
+    <meta property="og:title" content="Contact - Studievereniging BOLD">
+    <meta property="og:description" content="Neem contact op met onze CMD studentenvereniging">
+    <meta property="og:type" content="website">
+    <title>Contact - Studievereniging BOLD</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        // Prevent flash during page transition - must run immediately before any rendering
+        (function() {
+            if (sessionStorage.getItem('pageTransitioning') === 'true') {
+                document.documentElement.style.overflow = 'hidden';
+                document.documentElement.style.visibility = 'hidden';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay" id="page-transition-overlay">
+        <img src="img/BOLD_logo_wit.png" alt="BOLD" class="page-transition-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Studievereniging BOLD - Home">
+                    <img src="img/BOLD_logo_wit_zonder_tekst.png" alt="BOLD Logo" class="logo-image">
+                    <span class="logo-text">BOLD</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="introkamp.html" class="nav-link">Introkamp</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planning.html" class="nav-link">Planning</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="fotoboek.html" class="nav-link">Fotoboek</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="leden.html" class="nav-link">Leden</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donaties.html" class="nav-link">Donaties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" role="banner">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">Contact</h1>
+                    <p class="page-hero-subtitle">Neem contact op met BOLD voor vragen, aanmeldingen of samenwerkingen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info" aria-labelledby="contact-info-title">
+            <div class="container">
+                <h2 id="contact-info-title" class="section-title">Contactgegevens</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>E-mail</h3>
+                        <p>studieverenigingbold@gmail.com</p>
+                        <a href="mailto:studieverenigingbold@gmail.com" class="contact-link">Stuur een e-mail</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Locatie</h3>
+                        <p>Avans Hogeschool Breda<br>Lovensdijkstraat 61-63<br>4818 AJ Breda</p>
+                        <a href="https://maps.app.goo.gl/FTHAxrg9E9Q36sHp8" target="_blank" class="contact-link">Bekijk op kaart</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Social Media</h3>
+                        <p>Volg ons op sociale media voor updates en nieuws</p>
+                        <div class="social-links">
+                            <a target="_blank" rel="noopener noreferrer"href="https://www.instagram.com/studieverenigingbold" class="social-link" aria-label="Instagram">Instagram</a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/svbold" class="social-link" aria-label="Facebook">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form-section" aria-labelledby="contact-form-title">
+            <div class="container">
+                <h2 id="contact-form-title" class="section-title">Stuur ons een bericht</h2>
+                <div class="form-container">
+                    <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="1a874fd8-c3a7-4b38-8433-4b88f8b01145">
+                        
+                        <!-- Hidden name field that combines firstName and lastName -->
+                        <input type="hidden" name="name" id="fullName">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Voornaam *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Achternaam *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">E-mailadres *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefoonnummer</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="organization">Organisatie</label>
+                            <input type="text" id="organization" name="organization" placeholder="Bijvoorbeeld: Avans Hogeschool, Bedrijfsnaam">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Onderwerp *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecteer een onderwerp</option>
+                                <option value="lidmaatschap">Lidmaatschap</option>
+                                <option value="introkamp">Introkamp</option>
+                                <option value="activiteiten">Activiteiten</option>
+                                <option value="samenwerking">Samenwerking</option>
+                                <option value="donatie">Donatie</option>
+                                <option value="overig">Overig</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Bericht *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Vertel ons waar je contact over opneemt..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span class="checkmark"></span>
+                                Ik ga akkoord met de <a href="#" target="_blank">privacyverklaring</a> en geef toestemming voor het verwerken van mijn gegevens *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Verstuur bericht
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 id="faq-title" class="section-title">Veelgestelde vragen</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Hoe word ik lid van BOLD?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Je kunt je aanmelden via het contactformulier op deze pagina of door een e-mail te sturen naar studieverenigingbold@gmail.com.We nemen dan contact met je op om een afspraak te regelen.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Wat zijn de kosten van een lidmaatschap?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Het lidmaatschap van BOLD is helemaal gratis!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Kan ik ook meedoen aan activiteiten zonder lid te zijn?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Ja, alle activiteiten zijn open voor alle CMD studenten, ook als je  geen lid bent van BOLD.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Hoe vaak organiseert BOLD activiteiten?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We organiseren gemiddeld 1 activiteit per maand.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Kan ik suggesties doen voor nieuwe activiteiten?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absoluut! We horen graag je ideeën voor nieuwe activiteiten. Je kunt je suggesties doorgeven via het contactformulier of via onze socials!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Klaar om deel uit te maken van BOLD?</h2>
+                    <p class="cta-description">
+                        Meld je aan voor onze activiteiten of word lid van onze vereniging. 
+                        Samen maken we van je studietijd een onvergetelijke ervaring.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="introkamp.html" class="btn btn-primary" aria-label="Meld je aan voor Introkamp">
+                            Meld je aan voor Introkamp
+                        </a>
+                        <a href="donaties.html" class="btn btn-secondary" aria-label="Steun BOLD met een donatie">
+                            Steun BOLD
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Studievereniging BOLD</h3>
+                    <p class="footer-description">
+                        Dé studentenvereniging voor CMD studenten aan Avans Hogeschool Breda.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navigatie</h4>
+                    <ul class="footer-links">
+                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
+                        <li><a href="leden.html">Leden</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contactformulier</a></li>
+                        <li><a href="donaties.html">Donaties</a></li>
+                        <li><a href="mailto:studieverenigingbold@gmail.com">studieverenigingbold@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studievereniging BOLD. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

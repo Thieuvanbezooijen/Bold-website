@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ledenlijst van Studievereniging BOLD - Ontmoet alle leden van onze CMD studentenvereniging aan Avans Hogeschool Breda.">
+    <meta name="keywords" content="leden, ledenlijst, smoelenboek, CMD, Avans, Breda, studentenvereniging, BOLD, studenten">
+    <meta name="author" content="Studievereniging BOLD">
+    <meta property="og:title" content="Ledenlijst - Studievereniging BOLD">
+    <meta property="og:description" content="Ontmoet alle leden van onze CMD studentenvereniging">
+    <meta property="og:type" content="website">
+    <title>Ledenlijst - Studievereniging BOLD</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        // Prevent flash during page transition - must run immediately before any rendering
+        (function() {
+            if (sessionStorage.getItem('pageTransitioning') === 'true') {
+                document.documentElement.style.overflow = 'hidden';
+                document.documentElement.style.visibility = 'hidden';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay" id="page-transition-overlay">
+        <img src="img/BOLD_logo_wit.png" alt="BOLD" class="page-transition-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Studievereniging BOLD - Home">
+                    <img src="img/BOLD_logo_wit_zonder_tekst.png" alt="BOLD Logo" class="logo-image">
+                    <span class="logo-text">BOLD</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="introkamp.html" class="nav-link">Introkamp</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planning.html" class="nav-link">Planning</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="fotoboek.html" class="nav-link">Fotoboek</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="leden.html" class="nav-link active" aria-current="page">Leden</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donaties.html" class="nav-link">Donaties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" role="banner">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">Ledenlijst</h1>
+                    <p class="page-hero-subtitle">Ontmoet alle leden van onze creatieve community</p>
+                    <div class="member-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Actieve vrijwilligers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Studiejaren</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Activiteiten per jaar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Members Grid -->
+        <section class="members-section" aria-labelledby="members-title">
+            <div class="container">
+                <h2 id="members-title" class="section-title">Onze leden</h2>
+                <div class="members-grid" id="members-grid">
+                    <!-- Member 1 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Mehdi.jpg" alt="Mehdi van Bedaf" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Mehdi van Bedaf</h3>
+                            <p class="member-year">Jaar 2</p>
+                            <p class="member-role">Voorzitter</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Madelon.jpg" alt="Madelon Rovers" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Madelon Rovers</h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Vice Voorzitster / Penningmeester</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 - Jaar 3 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Finn.enc" alt="Finn van der Wallen" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Finn van der Wallen</h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Organisatie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 - Jaar 3 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Marijn.enc" alt="Marijn Ketelaar" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Marijn Ketelaar</h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Organisatie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 5 - Jaar 3 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Bram.enc" alt="Bram Moorman" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Bram Moorman</h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Organisatie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 6 - Jaar 3 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Daniel.jpeg" alt="Daniël Groenenboom" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Daniël Groenenboom</h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Grafisch Design / Organisatie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 7 - Jaar 3 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Victor.enc" alt="Victor Quaedvlieg" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Victor Quaedvlieg</h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Fotografie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 8 - Jaar 3 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Esmee.enc" alt="Esmee Capelle" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Esmee Capelle</h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Socialmedia</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Ruben.enc" alt="Ruben van Hooren" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Ruben van Hooren/h3>
+                            <p class="member-year">Jaar 3</p>
+                            <p class="member-role">Videografie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 9 - Jaar 2 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Milou.jpeg" alt="Milou Dolné" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Milou Dolné</h3>
+                            <p class="member-year">Jaar 2</p>
+                            <p class="member-role">Foto / videografie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 10 - Jaar 2 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Sam.jpg" alt="Sam Versprille" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Sam Versprille</h3>
+                            <p class="member-year">Jaar 2</p>
+                            <p class="member-role">Grafische vormgeving</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 11 - Jaar 2 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Thieu.enc" alt="Thieu van Bezooijen" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Thieu van Bezooijen</h3>
+                            <p class="member-year">Jaar 2</p>
+                            <p class="member-role">Socialmedia / Website</p>
+                        </div>
+                    </div>
+                     <!-- Member 11 - Jaar 2 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Martijn.jpg" alt="Martijn Alewijnse" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Martijn Alewijnse</h3>
+                            <p class="member-year">Jaar 2</p>
+                            <p class="member-role">Organisatie</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 12 - Jaar 1 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="img/ledenlijst/Micheal.jpg" alt="Michael" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Michael</h3>
+                            <p class="member-year">Jaar 1</p>
+                            <p class="member-role">Organiseren</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 13 - New Member -->
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Member Modal -->
+        <div class="member-modal" id="member-modal" role="dialog" aria-labelledby="member-modal-title" aria-hidden="true">
+            <div class="modal-backdrop" id="member-modal-backdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="member-modal-close" aria-label="Sluit member modal">&times;</button>
+                <div class="member-modal-content">
+                    <div class="member-modal-image">
+                        <img id="member-modal-photo" src="" alt="" class="modal-member-photo">
+                    </div>
+                    <div class="member-modal-info">
+                        <h2 id="member-modal-title" class="modal-member-name"></h2>
+                        <div class="modal-member-details">
+                            <p class="modal-member-year"></p>
+                            <p class="modal-member-role"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Word lid van BOLD</h2>
+                    <p class="cta-description">
+                        Wil je ook deel uitmaken van onze geweldige community? Meld je aan en ontdek wat BOLD voor jou kan betekenen.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-primary" aria-label="Word lid van BOLD">
+                            Word lid van BOLD
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Studievereniging BOLD</h3>
+                    <p class="footer-description">
+                        Dé studentenvereniging voor CMD studenten aan Avans Hogeschool Breda.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navigatie</h4>
+                    <ul class="footer-links">
+                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
+                        <li><a href="leden.html">Leden</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contactformulier</a></li>
+                        <li><a href="donaties.html">Donaties</a></li>
+                        <li><a href="mailto:studieverenigingbold@gmail.com">studieverenigingbold@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studievereniging BOLD. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

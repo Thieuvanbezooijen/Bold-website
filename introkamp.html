@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introkamp van Studievereniging BOLD - Meld je aan voor ons introductiekamp en maak kennis met je medestudenten CMD aan Avans Hogeschool Breda.">
+    <meta name="keywords" content="Introkamp, introductiekamp, CMD, Avans, Breda, studentenvereniging, BOLD, kennismaking">
+    <meta name="author" content="Studievereniging BOLD">
+    <meta property="og:title" content="Introkamp - Studievereniging BOLD">
+    <meta property="og:description" content="Meld je aan voor ons introductiekamp en maak kennis met je medestudenten CMD">
+    <meta property="og:type" content="website">
+    <title>Introkamp - Studievereniging BOLD</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        // Prevent flash during page transition - must run immediately before any rendering
+        (function() {
+            if (sessionStorage.getItem('pageTransitioning') === 'true') {
+                document.documentElement.style.overflow = 'hidden';
+                document.documentElement.style.visibility = 'hidden';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay" id="page-transition-overlay">
+        <img src="img/BOLD_logo_wit.png" alt="BOLD" class="page-transition-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Studievereniging BOLD - Home">
+                    <img src="img/BOLD_logo_wit_zonder_tekst.png" alt="BOLD Logo" class="logo-image">
+                    <span class="logo-text">BOLD</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="introkamp.html" class="nav-link active" aria-current="page">Introkamp</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planning.html" class="nav-link">Planning</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="fotoboek.html" class="nav-link">Fotoboek</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="leden.html" class="nav-link">Leden</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donaties.html" class="nav-link">Donaties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" role="banner">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">Introkamp 2024</h1>
+                    <p class="page-hero-subtitle">Maak kennis met je medestudenten en ontdek wat BOLD voor jou kan betekenen</p>
+                    <div class="page-hero-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">📅</span>
+                            <span class="meta-text">15-17 september 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            <span class="meta-text">Breda, Nederland</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">👥</span>
+                            <span class="meta-text">Max. 50 deelnemers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details -->
+        <section class="event-details" aria-labelledby="event-details-title">
+            <div class="container">
+                <div class="event-details-grid">
+                    <div class="event-info">
+                        <h2 id="event-details-title" class="section-title">Wat kun je verwachten?</h2>
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <div class="info-card-icon">🎯</div>
+                                <h3>Teambuilding</h3>
+                                <p>Leer je medestudenten kennen door middel van leuke activiteiten en challenges die je creativiteit uitdagen.</p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-card-icon">🎨</div>
+                                <h3>Workshops</h3>
+                                <p>Doe mee aan hands-on workshops over design, development en andere CMD-gerelateerde onderwerpen.</p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-card-icon">🍕</div>
+                                <h3>Eten & Drinken</h3>
+                                <p>Geniet van heerlijke maaltijden en snacks gedurende het hele weekend. Alles is inbegrepen!</p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-card-icon">🌙</div>
+                                <h3>Overnachting</h3>
+                                <p>Blijf overnachten in comfortabele accommodatie en maak het weekend compleet met je nieuwe vrienden.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Registration Form -->
+        <section class="registration" aria-labelledby="registration-title">
+            <div class="container">
+                <h2 id="registration-title" class="section-title">Meld je aan</h2>
+                <div class="registration-content">
+                    <div class="registration-info">
+                        <h3>Waarom meedoen aan Introkamp?</h3>
+                        <ul class="benefits-list">
+                            <li>Maak kennis met je medestudenten voordat de lessen beginnen</li>
+                            <li>Ontdek wat BOLD voor jou kan betekenen tijdens je studie</li>
+                            <li>Leer nieuwe vaardigheden in hands-on workshops</li>
+                            <li>Bouw een netwerk op dat je je hele studietijd helpt</li>
+                            <li>Heb een onvergetelijk weekend vol plezier en creativiteit</li>
+                        </ul>
+                        <div class="registration-deadline">
+                            <p><strong>Deadline voor aanmelding:</strong> 1 september 2024</p>
+                            <p><strong>Beperkt aantal plaatsen:</strong> Maximaal 50 deelnemers</p>
+                        </div>
+                    </div>
+                    
+                    <form class="registration-form" id="introkamp-form">
+                        <h3>Aanmeldformulier</h3>
+                        <div class="form-group">
+                            <label for="firstName">Voornaam *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Achternaam *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mailadres *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefoonnummer</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="studentNumber">Studentnummer *</label>
+                            <input type="text" id="studentNumber" name="studentNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studyYear">Studiejaar *</label>
+                            <select id="studyYear" name="studyYear" required>
+                                <option value="">Selecteer je studiejaar</option>
+                                <option value="1">Jaar 1</option>
+                                <option value="2">Jaar 2</option>
+                                <option value="3">Jaar 3</option>
+                                <option value="4">Jaar 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="package">Pakket *</label>
+                            <select id="package" name="package" required>
+                                <option value="">Selecteer je pakket</option>
+                                <option value="early-bird">Vroege Vogels (€45)</option>
+                                <option value="standard">Standaard (€55)</option>
+                                <option value="day-pass">Dagdeel (€25 per dag)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dietary">Dieetwensen / Allergieën</label>
+                            <textarea id="dietary" name="dietary" rows="3" placeholder="Laat ons weten of je speciale dieetwensen of allergieën hebt"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="motivation">Waarom wil je meedoen aan Introkamp?</label>
+                            <textarea id="motivation" name="motivation" rows="4" placeholder="Vertel ons waarom je graag mee wilt doen aan Introkamp"></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                Ik ga akkoord met de <a href="#" target="_blank">algemene voorwaarden</a> en <a href="#" target="_blank">privacyverklaring</a> *
+                            </label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Ik wil graag op de hoogte blijven van BOLD activiteiten via e-mail
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Meld je aan voor Introkamp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 id="faq-title" class="section-title">Veelgestelde vragen</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Wat moet ik meenemen naar Introkamp?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Neem comfortabele kleding mee, je laptop (voor workshops), toiletartikelen, en een positieve instelling! We zorgen voor beddengoed en handdoeken.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Kan ik ook meedoen als ik niet bij BOLD ben aangesloten?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Ja, Introkamp is open voor alle CMD studenten, ook als je nog geen lid bent van BOLD. Het is juist een perfecte manier om kennis te maken!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Wat als ik niet alle dagen kan?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Geen probleem! Je kunt kiezen voor het dagdeel-pakket en alleen de dagen meedoen die jou uitkomen. Laat het ons weten bij aanmelding.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Hoe wordt de betaling geregeld?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Na aanmelding ontvang je een factuur per e-mail. Je kunt betalen via iDEAL, creditcard of bankoverschrijving. De betaling moet binnen 7 dagen binnen zijn.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Wat als Introkamp niet doorgaat?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Bij annulering krijg je het volledige bedrag terug. We houden je op de hoogte van eventuele wijzigingen via e-mail.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Studievereniging BOLD</h3>
+                    <p class="footer-description">
+                        Dé studentenvereniging voor CMD studenten aan Avans Hogeschool Breda.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navigatie</h4>
+                    <ul class="footer-links">
+                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
+                        <li><a href="leden.html">Leden</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contactformulier</a></li>
+                        <li><a href="donaties.html">Donaties</a></li>
+                        <li><a href="mailto:studieverenigingbold@gmail.com">studieverenigingbold@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studievereniging BOLD. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaarplanning van Studievereniging BOLD - Bekijk alle activiteiten, evenementen en workshops die we dit jaar organiseren voor CMD studenten.">
+    <meta name="keywords" content="planning, activiteiten, evenementen, workshops, CMD, Avans, Breda, studentenvereniging, BOLD">
+    <meta name="author" content="Studievereniging BOLD">
+    <meta property="og:title" content="Jaarplanning - Studievereniging BOLD">
+    <meta property="og:description" content="Bekijk alle activiteiten en evenementen die BOLD dit jaar organiseert">
+    <meta property="og:type" content="website">
+    <title>Jaarplanning - Studievereniging BOLD</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        // Prevent flash during page transition - must run immediately before any rendering
+        (function() {
+            if (sessionStorage.getItem('pageTransitioning') === 'true') {
+                document.documentElement.style.overflow = 'hidden';
+                document.documentElement.style.visibility = 'hidden';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay" id="page-transition-overlay">
+        <img src="img/BOLD_logo_wit.png" alt="BOLD" class="page-transition-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Studievereniging BOLD - Home">
+                    <img src="img/BOLD_logo_wit_zonder_tekst.png" alt="BOLD Logo" class="logo-image">
+                    <span class="logo-text">BOLD</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="introkamp.html" class="nav-link">Introkamp</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planning.html" class="nav-link active" aria-current="page">Planning</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="fotoboek.html" class="nav-link">Fotoboek</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="leden.html" class="nav-link">Leden</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donaties.html" class="nav-link">Donaties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" role="banner">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">Jaarplanning 2025</h1>
+                    <p class="page-hero-subtitle">Ontdek alle activiteiten, evenementen en workshops die we dit jaar organiseren</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar View -->
+        <section class="calendar-section" aria-labelledby="calendar-title">
+            <div class="container">
+                <h2 id="calendar-title" class="section-title">Kalender overzicht</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="prev-month" aria-label="Vorige maand">‹</button>
+                        <h3 class="calendar-month" id="current-month">September 2024</h3>
+                        <button class="calendar-nav" id="next-month" aria-label="Volgende maand">›</button>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <!-- Calendar will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline View -->
+        <section class="timeline-section" aria-labelledby="timeline-title">
+            <div class="container">
+                <h2 id="timeline-title" class="section-title">Timeline overzicht</h2>
+                <div class="timeline-container" id="timeline-container">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="upcoming-events" aria-labelledby="upcoming-title">
+            <div class="container">
+                <h2 id="upcoming-title" class="section-title">Aankomende evenementen</h2>
+                <div class="events-grid" id="events-grid">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Mis geen enkel evenement</h2>
+                    <p class="cta-description">
+                        Blijf op de hoogte van alle BOLD activiteiten en meld je aan voor de evenementen die jou interesseren.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-primary" aria-label="Word lid van BOLD">
+                            Word lid van BOLD
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Studievereniging BOLD</h3>
+                    <p class="footer-description">
+                        Dé studentenvereniging voor CMD studenten aan Avans Hogeschool Breda.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navigatie</h4>
+                    <ul class="footer-links">
+                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
+                        <li><a href="leden.html">Leden</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contactformulier</a></li>
+                        <li><a href="donaties.html">Donaties</a></li>
+                        <li><a href="mailto:studieverenigingbold@gmail.com">studieverenigingbold@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studievereniging BOLD. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="events-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

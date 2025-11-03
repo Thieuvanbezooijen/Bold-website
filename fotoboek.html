@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fotoboek van Studievereniging BOLD - Bekijk foto's van alle activiteiten, evenementen en workshops die we hebben georganiseerd voor CMD studenten.">
+    <meta name="keywords" content="fotoboek, foto's, activiteiten, evenementen, workshops, CMD, Avans, Breda, studentenvereniging, BOLD">
+    <meta name="author" content="Studievereniging BOLD">
+    <meta property="og:title" content="Fotoboek - Studievereniging BOLD">
+    <meta property="og:description" content="Bekijk foto's van alle BOLD activiteiten en evenementen">
+    <meta property="og:type" content="website">
+    <title>Fotoboek - Studievereniging BOLD</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        // Prevent flash during page transition - must run immediately before any rendering
+        (function() {
+            if (sessionStorage.getItem('pageTransitioning') === 'true') {
+                document.documentElement.style.overflow = 'hidden';
+                document.documentElement.style.visibility = 'hidden';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay" id="page-transition-overlay">
+        <img src="img/BOLD_logo_wit.png" alt="BOLD" class="page-transition-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Studievereniging BOLD - Home">
+                    <img src="img/BOLD_logo_wit_zonder_tekst.png" alt="BOLD Logo" class="logo-image">
+                    <span class="logo-text">BOLD</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="introkamp.html" class="nav-link">Introkamp</a>
+                </li>
+                <li class="nav-item">
+                    <a href="planning.html" class="nav-link">Planning</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="fotoboek.html" class="nav-link active" aria-current="page">Fotoboek</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="leden.html" class="nav-link">Leden</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donaties.html" class="nav-link">Donaties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" role="banner">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">Fotoboek</h1>
+                    <p class="page-hero-subtitle">Herbeleef de mooiste momenten van onze activiteiten en evenementen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Filters -->
+        <section class="gallery-filters" aria-labelledby="filters-title">
+            <div class="container">
+                <h2 id="filters-title" class="section-title">Filter foto's</h2>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">Alle foto's</button>
+                    <button class="filter-tab" data-filter="introkamp">Introkamp</button>
+                    <button class="filter-tab" data-filter="workshops">Workshops</button>
+                    <button class="filter-tab" data-filter="social">Sociale activiteiten</button>
+                    <button class="filter-tab" data-filter="trips">Reizen</button>
+                    <button class="filter-tab" data-filter="2024">2024</button>
+                    <button class="filter-tab" data-filter="2023">2023</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="photo-gallery" aria-labelledby="gallery-title">
+            <div class="container">
+                <h2 id="gallery-title" class="section-title">Foto's</h2>
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Introkamp 2024 -->
+                    <div class="gallery-item" data-category="introkamp 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Introkamp 2024 - Kennismakingsspellen" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Introkamp 2024</h3>
+                            <p class="gallery-description">Kennismakingsspellen tijdens het introductiekamp</p>
+                            <span class="gallery-date">15-17 september 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="introkamp 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Introkamp 2024 - Design Thinking Workshop" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Design Thinking Workshop</h3>
+                            <p class="gallery-description">Hands-on workshop over creatief denken</p>
+                            <span class="gallery-date">15 september 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="introkamp 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Introkamp 2024 - Teambuilding activiteiten" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Teambuilding</h3>
+                            <p class="gallery-description">Outdoor teambuilding activiteiten</p>
+                            <span class="gallery-date">16 september 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Workshops 2024 -->
+                    <div class="gallery-item" data-category="workshops 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Figma Masterclass workshop" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Figma Masterclass</h3>
+                            <p class="gallery-description">Leer de fijne kneepjes van Figma</p>
+                            <span class="gallery-date">5 oktober 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="workshops 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Web Development Bootcamp" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Web Development Bootcamp</h3>
+                            <p class="gallery-description">Intensieve workshop over moderne web development</p>
+                            <span class="gallery-date">9 november 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Sociale activiteiten 2024 -->
+                    <div class="gallery-item" data-category="social 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Welkom Borrel 2024" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Welkom Borrel</h3>
+                            <p class="gallery-description">Informele borrel voor nieuwe en bestaande leden</p>
+                            <span class="gallery-date">28 september 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="social 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Halloween Party 2024" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Halloween Party</h3>
+                            <p class="gallery-description">Spookachtige avond vol kostuums en creativiteit</p>
+                            <span class="gallery-date">26 oktober 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Reizen 2024 -->
+                    <div class="gallery-item" data-category="trips 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Design Museum Rotterdam bezoek" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Design Museum Rotterdam</h3>
+                            <p class="gallery-description">Bezoek aan het Design Museum met rondleiding</p>
+                            <span class="gallery-date">16 november 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="trips 2024" data-year="2024">
+                        <img src="img/placeholder1.PNG" alt="Amsterdam Design Tour" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Amsterdam Design Tour</h3>
+                            <p class="gallery-description">Rondleiding langs creatieve hotspots van Amsterdam</p>
+                            <span class="gallery-date">14 december 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 2023 Foto's -->
+                    <div class="gallery-item" data-category="introkamp 2023" data-year="2023">
+                        <img src="img/placeholder1.PNG" alt="Introkamp 2023" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Introkamp 2023</h3>
+                            <p class="gallery-description">Het eerste Introkamp van BOLD</p>
+                            <span class="gallery-date">16-18 september 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="workshops 2023" data-year="2023">
+                        <img src="img/placeholder1.PNG" alt="Portfolio Review 2023" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Portfolio Review 2023</h3>
+                            <p class="gallery-description">Portfolio beoordeling door professionals</p>
+                            <span class="gallery-date">12 oktober 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="social 2023" data-year="2023">
+                        <img src="img/placeholder1.PNG" alt="Kerstborrel 2023" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Kerstborrel 2023</h3>
+                            <p class="gallery-description">Gezellige kerstborrel met creatieve workshop</p>
+                            <span class="gallery-date">8 december 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="trips 2023" data-year="2023">
+                        <img src="img/placeholder1.PNG" alt="Utrecht Design Tour 2023" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Utrecht Design Tour</h3>
+                            <p class="gallery-description">Rondleiding langs design agencies in Utrecht</p>
+                            <span class="gallery-date">25 november 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="workshops 2023" data-year="2023">
+                        <img src="img/placeholder1.PNG" alt="Adobe Creative Suite Workshop 2023" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Adobe Creative Suite Workshop</h3>
+                            <p class="gallery-description">Workshop over Photoshop, Illustrator en InDesign</p>
+                            <span class="gallery-date">3 november 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="social 2023" data-year="2023">
+                        <img src="img/placeholder1.PNG" alt="Netwerk Event 2023" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Netwerk Event 2023</h3>
+                            <p class="gallery-description">Ontmoet professionals uit de creatieve industrie</p>
+                            <span class="gallery-date">23 november 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Modal -->
+        <div class="photo-modal" id="photo-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-backdrop" id="modal-backdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close" aria-label="Sluit foto modal">&times;</button>
+                <div class="modal-image-container">
+                    <img id="modal-image" src="" alt="" class="modal-image">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modal-title" class="modal-title"></h3>
+                    <p id="modal-description" class="modal-description"></p>
+                    <span id="modal-date" class="modal-date"></span>
+                </div>
+                <div class="modal-navigation">
+                    <button class="modal-nav modal-prev" id="modal-prev" aria-label="Vorige foto">‹</button>
+                    <button class="modal-nav modal-next" id="modal-next" aria-label="Volgende foto">›</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Deel jouw foto's</h2>
+                    <p class="cta-description">
+                        Heb je foto's van BOLD activiteiten? Deel ze met ons en help ons fotoboek uit te breiden!
+                    </p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-primary" aria-label="Stuur foto's in">
+                            Stuur foto's in
+                        </a>
+                        <a href="planning.html" class="btn btn-secondary" aria-label="Bekijk planning">
+                            Bekijk planning
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Studievereniging BOLD</h3>
+                    <p class="footer-description">
+                        Dé studentenvereniging voor CMD studenten aan Avans Hogeschool Breda.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navigatie</h4>
+                    <ul class="footer-links">
+                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
+                        <li><a href="leden.html">Leden</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contactformulier</a></li>
+                        <li><a href="donaties.html">Donaties</a></li>
+                        <li><a href="mailto:studieverenigingbold@gmail.com">studieverenigingbold@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studievereniging BOLD. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Photo Album System -->
+    <script src="photo-album-config.js"></script>
+    <script src="photo-album-api.js"></script>
+    <script src="photo-album-manager.js"></script>
+    <script src="photo-album-renderer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
