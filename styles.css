@@ -48,13 +48,13 @@ body.page-transitioning {
 .page-transition-overlay.swipe-in {
     transform: translateX(0);
     pointer-events: all;
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-transition-overlay.swipe-continue {
     transform: translateX(-100%);
     pointer-events: all;
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-transition-logo {
@@ -69,7 +69,7 @@ body.page-transitioning {
 }
 
 .page-transition-overlay.swipe-continue .page-transition-logo {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.2s ease;
 }
 
@@ -226,7 +226,7 @@ p {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #868686;
+    color: #fff;
 }
 
 .nav-link::after {
