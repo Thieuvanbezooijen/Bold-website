@@ -1105,7 +1105,35 @@ class PlanningPage {
         this.currentMonthEl = document.getElementById('current-month');
         this.prevMonthBtn = document.getElementById('prev-month');
         this.nextMonthBtn = document.getElementById('next-month');
-        this.events = typeof EVENTS_DATA !== 'undefined' ? EVENTS_DATA : [];
+        this.events = typeof EVENTS_DATA !== 'undefined' 
+            ? EVENTS_DATA.map((event, index) => ({ ...event, id: index }))
+            : [];
+        this.monthNames = [
+            'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni',
+            'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
+        ];
+        
+        this.eventModal = document.getElementById('calendar-event-modal');
+        this.eventModalBackdrop = document.getElementById('calendar-event-modal-backdrop');
+        this.eventModalClose = document.getElementById('calendar-event-modal-close');
+        this.eventModalTitle = document.getElementById('calendar-event-modal-title');
+        this.eventModalDescription = document.getElementById('calendar-event-modal-description');
+        this.eventModalDate = document.getElementById('calendar-event-modal-date');
+        this.eventModalLocation = document.getElementById('calendar-event-modal-location');
+        this.eventModalTime = document.getElementById('calendar-event-modal-time');
+        this.eventModalLink = document.getElementById('calendar-event-modal-link');
+        this.futureToggle = null;
+        this.futureList = null;
+        this.futureMonthGroups = [];
+        this.futureMonthIndex = 0;
+        this.futureAllLoaded = false;
+        this.futureExpanded = false;
+        this.pastToggle = null;
+        this.pastList = null;
+        this.pastMonthGroups = [];
+        this.pastMonthIndex = 0;
+        this.pastAllLoaded = false;
+        this.pastExpanded = false;
         
         // Always initialize
         this.init();
@@ -1115,6 +1143,7 @@ class PlanningPage {
         // Render events
         this.renderTimeline();
         this.renderUpcomingEvents();
+        this.setupEventModal();
         
         // Calendar functionality
         if (this.calendarGrid) {
@@ -1149,30 +1178,125 @@ class PlanningPage {
         
         this.timelineContainer.innerHTML = '';
         
+        // Reset previous/future controls
+        this.futureToggle = null;
+        this.futureList = null;
+        this.futureMonthGroups = [];
+        this.futureMonthIndex = 0;
+        this.futureAllLoaded = false;
+        this.futureExpanded = false;
+        this.pastToggle = null;
+        this.pastList = null;
+        this.pastMonthGroups = [];
+        this.pastMonthIndex = 0;
+        this.pastAllLoaded = false;
+        this.pastExpanded = false;
+        
         const sortedEvents = this.sortEventsByDate(this.events);
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const currentMonth = today.getMonth();
+        
+        const pastEvents = [];
+        const currentEvents = [];
+        const futureEvents = [];
         
         sortedEvents.forEach(event => {
-            const item = document.createElement('div');
-            item.className = 'timeline-item';
+            if (event.year === currentYear && event.month === currentMonth) {
+                currentEvents.push(event);
+            } else if (event.year < currentYear || (event.year === currentYear && event.month < currentMonth)) {
+                pastEvents.push(event);
+            } else {
+                futureEvents.push(event);
+            }
+        });
+        
+        // Render current month as main focus (fallback to all if no current-month events)
+        const mainEvents = currentEvents.length > 0 ? currentEvents : sortedEvents;
+        mainEvents.forEach(event => {
+            this.timelineContainer.appendChild(this.createTimelineItem(event));
+        });
+        
+        // Previous months toggle (above timeline) – only if there are real current-month events
+        if (pastEvents.length > 0 && currentEvents.length > 0) {
+            const timelineParent = this.timelineContainer.parentElement || this.timelineContainer;
             
-            item.innerHTML = `
-                <div class="timeline-date">
-                    <span class="date-day">${event.day}</span>
-                    <span class="date-month">${this.getMonthAbbr(event.month)}</span>
-                </div>
-                <div class="timeline-content">
-                    <h3 class="timeline-title">${event.title}</h3>
-                    <p class="timeline-description">${event.description}</p>
-                    <div class="timeline-meta">
-                        <span class="timeline-location">📍 ${event.location}</span>
-                        <span class="timeline-time">${event.time}</span>
-                    </div>
-                    ${event.link ? `<a href="${event.link}" class="timeline-link">Meer informatie</a>` : ''}
-                </div>
+            const pastBlock = document.createElement('div');
+            pastBlock.className = 'timeline-past-block';
+            
+            const pastWrapper = document.createElement('div');
+            pastWrapper.className = 'timeline-future-wrapper timeline-past-wrapper';
+            
+            const pastButton = document.createElement('button');
+            pastButton.type = 'button';
+            pastButton.className = 'timeline-future-toggle';
+            pastButton.setAttribute('aria-expanded', 'false');
+            
+            this.pastMonthGroups = this.groupEventsByMonth(pastEvents).reverse(); // most recent month first
+            this.pastMonthIndex = 0;
+            const prevMonthLabel = this.getNextPastMonthLabel();
+            
+            pastButton.innerHTML = `
+                <span class="timeline-future-toggle-text">${prevMonthLabel}</span>
+                <span class="toggle-icon">↑</span>
             `;
             
-            this.timelineContainer.appendChild(item);
-        });
+            const pastList = document.createElement('div');
+            pastList.className = 'timeline-future-list';
+            pastList.setAttribute('aria-hidden', 'true');
+            pastList.style.maxHeight = '0px';
+            
+            pastWrapper.appendChild(pastButton);
+            pastBlock.appendChild(pastWrapper);
+            pastBlock.appendChild(pastList);
+            
+            timelineParent.insertBefore(pastBlock, this.timelineContainer);
+            
+            this.pastToggle = pastButton;
+            this.pastList = pastList;
+            
+            pastButton.addEventListener('click', () => this.handlePastToggleClick());
+        }
+        
+        // Future months toggle (under timeline)
+        if (futureEvents.length > 0) {
+            const toggleWrapper = document.createElement('div');
+            toggleWrapper.className = 'timeline-future-wrapper';
+            
+            const toggleButton = document.createElement('button');
+            toggleButton.type = 'button';
+            toggleButton.className = 'timeline-future-toggle';
+            toggleButton.setAttribute('aria-expanded', 'false');
+            
+            this.futureMonthGroups = this.groupEventsByMonth(futureEvents);
+            this.futureMonthIndex = 0;
+            const nextMonthLabel = this.getNextFutureMonthLabel();
+            
+            toggleButton.innerHTML = `
+                <span class="timeline-future-toggle-text">${nextMonthLabel}</span>
+                <span class="toggle-icon">↑</span>
+            `;
+            
+            const futureList = document.createElement('div');
+            futureList.className = 'timeline-future-list';
+            futureList.setAttribute('aria-hidden', 'true');
+            futureList.style.maxHeight = '0px';
+            
+            const futureBlock = document.createElement('div');
+            futureBlock.className = 'timeline-future-block';
+            toggleWrapper.appendChild(toggleButton);
+            futureBlock.appendChild(toggleWrapper);
+            futureBlock.appendChild(futureList);
+
+            // Place the future block under the entire timeline section,
+            // not inside the central timeline line container
+            const timelineParent = this.timelineContainer.parentElement || this.timelineContainer;
+            timelineParent.appendChild(futureBlock);
+            
+            this.futureToggle = toggleButton;
+            this.futureList = futureList;
+            toggleButton.addEventListener('click', () => this.handleFutureToggleClick());
+        }
     }
     
     renderUpcomingEvents() {
@@ -1209,12 +1333,33 @@ class PlanningPage {
                         <span class="event-location">📍 ${event.location}</span>
                         <span class="event-time">${event.time}</span>
                     </div>
-                    ${event.link ? `<a href="${event.link}" class="event-link">${event.link.includes('introkamp') ? 'Aanmelden' : 'Meer informatie'}</a>` : ''}
+                    ${event.link ? `<a href="${event.link}" target=”_blank” class="event-link">${event.link.includes('introkamp') ? 'Aanmelden' : 'Meer informatie'}</a>` : ''}
                 </div>
             `;
             
             this.eventsGrid.appendChild(card);
         });
+    }
+    
+    createTimelineItem(event) {
+        const item = document.createElement('div');
+        item.className = 'timeline-item';
+        item.innerHTML = `
+            <div class="timeline-date">
+                <span class="date-day">${event.day}</span>
+                <span class="date-month">${this.getMonthAbbr(event.month)}</span>
+            </div>
+            <div class="timeline-content">
+                <h3 class="timeline-title">${event.title}</h3>
+                <p class="timeline-description">${event.description}</p>
+                <div class="timeline-meta">
+                    <span class="timeline-location">📍 ${event.location}</span>
+                    <span class="timeline-time">${event.time}</span>
+                </div>
+                ${event.link ? `<a href="${event.link}" class="timeline-link">Meer informatie</a>` : ''}
+            </div>
+        `;
+        return item;
     }
     
     renderCalendar() {
@@ -1223,11 +1368,7 @@ class PlanningPage {
         
         // Update month display
         if (this.currentMonthEl) {
-            const monthNames = [
-                'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni',
-                'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
-            ];
-            this.currentMonthEl.textContent = `${monthNames[month]} ${year}`;
+            this.currentMonthEl.textContent = `${this.monthNames[month]} ${year}`;
         }
         
         // Clear calendar
@@ -1267,23 +1408,33 @@ class PlanningPage {
                 dayEl.appendChild(dayNumber);
                 
                 // Check if there's an event on this day
-                if (this.hasEventOnDay(day, month, year)) {
+                const eventsForDay = this.getEventsOnDay(day, month, year);
+                if (eventsForDay.length > 0) {
                     dayEl.classList.add('has-event');
-                    const event = document.createElement('div');
-                    event.className = 'calendar-event';
-                    event.textContent = 'BOLD Event';
-                    dayEl.appendChild(event);
+                    eventsForDay.forEach(eventData => {
+                        const eventButton = document.createElement('button');
+                        eventButton.type = 'button';
+                        eventButton.className = 'calendar-event';
+                        eventButton.textContent = eventData.title;
+                        eventButton.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            this.openEventModal(eventData);
+                        });
+                        dayEl.appendChild(eventButton);
+                    });
+                    
+                    // Allow clicking the entire day to open first event
+                    dayEl.addEventListener('click', () => this.openEventModal(eventsForDay[0]));
                 }
-                
                 this.calendarGrid.appendChild(dayEl);
             }
         }
     }
     
-    hasEventOnDay(day, month, year) {
-        return this.events.some(event => 
-            event.day === day && 
-            event.month === month && 
+    getEventsOnDay(day, month, year) {
+        return this.events.filter(event =>
+            event.day === day &&
+            event.month === month &&
             event.year === year
         );
     }
@@ -1296,6 +1447,293 @@ class PlanningPage {
     nextMonth() {
         this.currentDate.setMonth(this.currentDate.getMonth() + 1);
         this.renderCalendar();
+    }
+    
+    groupEventsByMonth(events) {
+        const monthMap = new Map();
+        
+        events.forEach(event => {
+            const key = `${event.year}-${event.month}`;
+            if (!monthMap.has(key)) {
+                monthMap.set(key, {
+                    month: event.month,
+                    year: event.year,
+                    events: []
+                });
+            }
+            monthMap.get(key).events.push(event);
+        });
+        
+        return Array.from(monthMap.values()).sort((a, b) => {
+            if (a.year === b.year) {
+                return a.month - b.month;
+            }
+            return a.year - b.year;
+        });
+    }
+    
+    getNextFutureMonthLabel() {
+        if (this.futureMonthIndex >= this.futureMonthGroups.length) {
+            return 'Geen volgende maanden';
+        }
+        
+        const group = this.futureMonthGroups[this.futureMonthIndex];
+        const monthName = this.monthNames[group.month];
+        return `Volgende maand: ${monthName} ${group.year} (${group.events.length})`;
+    }
+    
+    getNextPastMonthLabel() {
+        if (this.pastMonthIndex >= this.pastMonthGroups.length) {
+            return 'Geen vorige maanden';
+        }
+        
+        const group = this.pastMonthGroups[this.pastMonthIndex];
+        const monthName = this.monthNames[group.month];
+        return `Vorige maand: ${monthName} ${group.year} (${group.events.length})`;
+    }
+
+    handleFutureToggleClick() {
+        if (!this.futureList || !this.futureToggle) return;
+        
+        // If not all months are loaded yet, keep loading more months
+        if (!this.futureAllLoaded) {
+            this.showNextFutureMonth();
+            return;
+        }
+        
+        const toggleText = this.futureToggle.querySelector('.timeline-future-toggle-text');
+        
+        if (this.futureExpanded) {
+            // Collapse
+            this.futureList.setAttribute('aria-hidden', 'true');
+            this.futureToggle.setAttribute('aria-expanded', 'false');
+            const currentHeight = this.futureList.scrollHeight;
+            this.futureList.style.maxHeight = currentHeight + 'px';
+            requestAnimationFrame(() => {
+                this.futureList.style.maxHeight = '0px';
+            });
+            if (toggleText) {
+                toggleText.textContent = 'Toon toekomstige maanden';
+            }
+            this.futureExpanded = false;
+        } else {
+            // Expand already loaded months
+            this.futureList.setAttribute('aria-hidden', 'false');
+            this.futureToggle.setAttribute('aria-expanded', 'true');
+            const fullHeight = this.futureList.scrollHeight;
+            this.futureList.style.maxHeight = fullHeight + 'px';
+            if (toggleText) {
+                toggleText.textContent = 'Verberg toekomstige maanden';
+            }
+            this.futureExpanded = true;
+        }
+    }
+
+    handlePastToggleClick() {
+        if (!this.pastList || !this.pastToggle) return;
+        
+        // If not all months are loaded yet, keep loading more months
+        if (!this.pastAllLoaded) {
+            this.showNextPastMonth();
+            return;
+        }
+        
+        const toggleText = this.pastToggle.querySelector('.timeline-future-toggle-text');
+        
+        if (this.pastExpanded) {
+            // Collapse
+            this.pastList.setAttribute('aria-hidden', 'true');
+            this.pastToggle.setAttribute('aria-expanded', 'false');
+            const currentHeight = this.pastList.scrollHeight;
+            this.pastList.style.maxHeight = currentHeight + 'px';
+            requestAnimationFrame(() => {
+                this.pastList.style.maxHeight = '0px';
+            });
+            if (toggleText) {
+                toggleText.textContent = 'Toon vorige maanden';
+            }
+            this.pastExpanded = false;
+        } else {
+            // Expand already loaded months
+            this.pastList.setAttribute('aria-hidden', 'false');
+            this.pastToggle.setAttribute('aria-expanded', 'true');
+            const fullHeight = this.pastList.scrollHeight;
+            this.pastList.style.maxHeight = fullHeight + 'px';
+            if (toggleText) {
+                toggleText.textContent = 'Verberg vorige maanden';
+            }
+            this.pastExpanded = true;
+        }
+    }
+    
+    showNextFutureMonth() {
+        if (!this.futureList || !this.futureToggle || this.futureMonthIndex >= this.futureMonthGroups.length) {
+            return;
+        }
+        
+        if (this.futureMonthIndex === 0) {
+            this.futureList.setAttribute('aria-hidden', 'false');
+            this.futureToggle.setAttribute('aria-expanded', 'true');
+            this.futureList.style.maxHeight = '0px';
+        }
+        
+        const group = this.futureMonthGroups[this.futureMonthIndex];
+        const monthSection = document.createElement('div');
+        monthSection.className = 'timeline-future-month';
+        
+        const monthTitle = document.createElement('h4');
+        monthTitle.className = 'timeline-future-month-title';
+        monthTitle.textContent = `${this.monthNames[group.month]} ${group.year}`;
+        monthSection.appendChild(monthTitle);
+        
+        const monthEventsWrapper = document.createElement('div');
+        monthEventsWrapper.className = 'timeline-future-month-events';
+        group.events.forEach(event => {
+            const item = this.createTimelineItem(event);
+            item.classList.add('future-event');
+            monthEventsWrapper.appendChild(item);
+        });
+        monthSection.appendChild(monthEventsWrapper);
+        
+        this.futureList.appendChild(monthSection);
+        const newItems = Array.from(monthSection.querySelectorAll('.timeline-item'));
+        
+        requestAnimationFrame(() => {
+            this.futureList.style.maxHeight = `${this.futureList.scrollHeight}px`;
+            newItems.forEach(item => item.classList.add('revealed'));
+        });
+        
+        this.futureMonthIndex += 1;
+        const remainingMonths = this.futureMonthGroups.length - this.futureMonthIndex;
+        const toggleText = this.futureToggle.querySelector('.timeline-future-toggle-text');
+        
+        if (remainingMonths <= 0) {
+            this.futureAllLoaded = true;
+            this.futureExpanded = true;
+            if (toggleText) {
+                toggleText.textContent = 'Verberg toekomstige maanden';
+            }
+        } else {
+            if (toggleText) {
+                toggleText.textContent = this.getNextFutureMonthLabel();
+            }
+        }
+    }
+    
+    showNextPastMonth() {
+        if (!this.pastList || !this.pastToggle || this.pastMonthIndex >= this.pastMonthGroups.length) {
+            return;
+        }
+        
+        if (this.pastMonthIndex === 0) {
+            this.pastList.setAttribute('aria-hidden', 'false');
+            this.pastToggle.setAttribute('aria-expanded', 'true');
+            this.pastList.style.maxHeight = '0px';
+        }
+        
+        const group = this.pastMonthGroups[this.pastMonthIndex];
+        const monthSection = document.createElement('div');
+        monthSection.className = 'timeline-future-month';
+        
+        const monthTitle = document.createElement('h4');
+        monthTitle.className = 'timeline-future-month-title';
+        monthTitle.textContent = `${this.monthNames[group.month]} ${group.year}`;
+        monthSection.appendChild(monthTitle);
+        
+        const monthEventsWrapper = document.createElement('div');
+        monthEventsWrapper.className = 'timeline-future-month-events';
+        group.events.forEach(event => {
+            const item = this.createTimelineItem(event);
+            item.classList.add('future-event');
+            monthEventsWrapper.appendChild(item);
+        });
+        monthSection.appendChild(monthEventsWrapper);
+        
+        this.pastList.appendChild(monthSection);
+        const newItems = Array.from(monthSection.querySelectorAll('.timeline-item'));
+        
+        requestAnimationFrame(() => {
+            this.pastList.style.maxHeight = `${this.pastList.scrollHeight}px`;
+            newItems.forEach(item => item.classList.add('revealed'));
+        });
+        
+        this.pastMonthIndex += 1;
+        const remainingMonths = this.pastMonthGroups.length - this.pastMonthIndex;
+        const toggleText = this.pastToggle.querySelector('.timeline-future-toggle-text');
+        
+        if (remainingMonths <= 0) {
+            this.pastAllLoaded = true;
+            this.pastExpanded = true;
+            if (toggleText) {
+                toggleText.textContent = 'Verberg vorige maanden';
+            }
+        } else {
+            if (toggleText) {
+                toggleText.textContent = this.getNextPastMonthLabel();
+            }
+        }
+    }
+    
+    setupEventModal() {
+        if (!this.eventModal) return;
+        
+        if (this.eventModalClose) {
+            this.eventModalClose.addEventListener('click', () => this.closeEventModal());
+        }
+        
+        if (this.eventModalBackdrop) {
+            this.eventModalBackdrop.addEventListener('click', () => this.closeEventModal());
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.eventModal.classList.contains('active')) {
+                this.closeEventModal();
+            }
+        });
+    }
+    
+    openEventModal(event) {
+        if (!this.eventModal || !event) return;
+        
+        if (this.eventModalTitle) {
+            this.eventModalTitle.textContent = event.title;
+        }
+        
+        if (this.eventModalDescription) {
+            this.eventModalDescription.textContent = event.description || '';
+        }
+        
+        if (this.eventModalDate) {
+            this.eventModalDate.textContent = `${event.day} ${this.monthNames[event.month]} ${event.year}`;
+        }
+        
+        if (this.eventModalLocation) {
+            this.eventModalLocation.textContent = `📍 ${event.location || 'Locatie volgt'}`;
+        }
+        
+        if (this.eventModalTime) {
+            this.eventModalTime.textContent = `🕒 ${event.time || 'Tijd volgt'}`;
+        }
+        
+        if (this.eventModalLink) {
+            if (event.link) {
+                this.eventModalLink.href = event.link;
+                this.eventModalLink.hidden = false;
+            } else {
+                this.eventModalLink.hidden = true;
+            }
+        }
+        
+        this.eventModal.classList.add('active');
+        this.eventModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    closeEventModal() {
+        if (!this.eventModal) return;
+        this.eventModal.classList.remove('active');
+        this.eventModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
     }
 }
 

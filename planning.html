@@ -45,9 +45,9 @@
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="introkamp.html" class="nav-link">Introkamp</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="planning.html" class="nav-link active" aria-current="page">Planning</a>
                 </li>
@@ -86,6 +86,16 @@
             </div>
         </section>
 
+                <!-- Upcoming Events -->
+                <section class="upcoming-events" aria-labelledby="upcoming-title">
+                    <div class="container">
+                        <h2 id="upcoming-title" class="section-title">Aankomende evenementen</h2>
+                        <div class="events-grid" id="events-grid">
+                            <!-- Events will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
         <!-- Calendar View -->
         <section class="calendar-section" aria-labelledby="calendar-title">
             <div class="container">
@@ -100,28 +110,35 @@
                         <!-- Calendar will be populated by JavaScript -->
                     </div>
                 </div>
+                <div class="calendar-event-modal" id="calendar-event-modal" role="dialog" aria-modal="true" aria-hidden="true">
+                    <div class="calendar-event-modal-backdrop" id="calendar-event-modal-backdrop"></div>
+                    <div class="calendar-event-modal-content" role="document">
+                        <button class="calendar-event-modal-close" id="calendar-event-modal-close" aria-label="Sluit evenement details">×</button>
+                        <div class="calendar-event-modal-body">
+                            <p class="calendar-event-modal-date" id="calendar-event-modal-date"></p>
+                            <h3 class="calendar-event-modal-title" id="calendar-event-modal-title"></h3>
+                            <p class="calendar-event-modal-description" id="calendar-event-modal-description"></p>
+                            <div class="calendar-event-modal-meta">
+                                <span class="calendar-event-modal-location" id="calendar-event-modal-location"></span>
+                                <span class="calendar-event-modal-time" id="calendar-event-modal-time"></span>
+                            </div>
+                            <a class="calendar-event-modal-link" id="calendar-event-modal-link" href="#" target="_blank" rel="noopener" hidden>Meer informatie</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Timeline View -->
-        <section class="timeline-section" aria-labelledby="timeline-title">
+        <!-- <section class="timeline-section" aria-labelledby="timeline-title">
             <div class="container">
                 <h2 id="timeline-title" class="section-title">Timeline overzicht</h2>
                 <div class="timeline-container" id="timeline-container">
-                    <!-- Events will be populated by JavaScript -->
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <!-- Upcoming Events -->
-        <section class="upcoming-events" aria-labelledby="upcoming-title">
-            <div class="container">
-                <h2 id="upcoming-title" class="section-title">Aankomende evenementen</h2>
-                <div class="events-grid" id="events-grid">
-                    <!-- Events will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
+
 
         <!-- CTA Section -->
         <section class="cta" aria-labelledby="cta-title">
@@ -134,6 +151,10 @@
                     <div class="cta-actions">
                         <a href="contact.html" class="btn btn-primary" aria-label="Word lid van BOLD">
                             Word lid van BOLD
+                        </a>
+                        <a href="donaties.html" class="btn btn-secondary" aria-label="Steun BOLD">
+                            Steun BOLD
+                        </a>
                     </div>
                 </div>
             </div>
@@ -153,7 +174,7 @@
                 <div class="footer-section">
                     <h4 class="footer-subtitle">Navigatie</h4>
                     <ul class="footer-links">
-                        <li><a href="introkamp.html">Introkamp</a></li>
+                        <!-- <li><a href="introkamp.html">Introkamp</a></li> -->
                         <li><a href="planning.html">Planning</a></li>
                         <!-- <li><a href="fotoboek.html">Fotoboek</a></li> -->
                         <li><a href="leden.html">Leden</a></li>

@@ -16,6 +16,16 @@
 // Events are automatically sorted by date and displayed in timeline and calendar.
 
 const EVENTS_DATA = [
+    // {
+    // day: 9,                          // Day of month (1-31)
+    // month: 9,                         // Month (0 = January, 8 = September, 11 = December)
+    // year: 2025,                       // Year (e.g., 2024, 2025)
+    // title: 'Kroegentocht',             // Event title
+    // description: 'Een heerlijke avond bomvol enge deals ☠️', // Event description
+    // location: 'Binnenstad Breda',                // Location name
+    // time: '20:00-00:00',             // Time or duration (e.g., '14:00-17:00', 'Hele dag', '3 dagen')
+    // link: 'https://www.facebook.com/media/set/?set=a.1229739325860933&type=3'            // Optional: link to event page (leave empty string '' if no link)
+    // }, 
     {
         day: 13,
         month: 10,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
@@ -23,7 +33,8 @@ const EVENTS_DATA = [
         title: 'Sinterklaas Pubquiz',
         description: 'Een klassieke pubquiz met een zoete prijs 👀',
         location: 'Cafe Vulling',
-        time: '19:00-22:00',
+        time: '20-00-22:00',
+        link: 'https://www.facebook.com/media/set/?set=a.1265868255581373&type=3'  ,
     },
     {
         day: 27,
@@ -31,8 +42,9 @@ const EVENTS_DATA = [
         year: 2025,
         title: 'Kroegentocht',
         description: 'Een gezellige avond bomvol deals 🤑',
-        location: 'T.B.D',
-        time: '20:00-00:00',
+        location: 'Binnenstad Breda',
+        time: '20:00-01:00',
+        link: 'https://www.facebook.com/media/set/?set=a.1269588255209373&type=3',
     },
     {
         day: 18,
@@ -41,7 +53,18 @@ const EVENTS_DATA = [
         title: 'Kerstgala',
         description: 'HET feest van het jaar!🎉',
         location: 'De Avenue',
-        time: '20:00-00:00',
+        time: '20:00-02:00',
+        link: 'https://www.instagram.com/p/DRaokjQghOi',
+    },
+    {
+        day: 18,
+        month: 0,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+        year: 2026,
+        title: 'Placeholder',
+        description: 'Placeholder',
+        location: 'Placeholder',
+        time: '00:00-00:00',
+        link: 'img/placeholder1.png',
     },
     
 ];
