@@ -69,7 +69,7 @@ body.page-transitioning {
 }
 
 .page-transition-overlay.swipe-continue .page-transition-logo {
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.2s ease;
 }
 
@@ -226,7 +226,7 @@ p {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #fff;
+    color: #868686;
 }
 
 .nav-link::after {
@@ -1820,9 +1820,9 @@ p {
 
 .timeline-meta {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap;
 }
 
 .timeline-location,
@@ -1854,7 +1854,7 @@ p {
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -1930,9 +1930,9 @@ p {
 
 .event-meta {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap;
 }
 
 .event-location,

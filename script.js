@@ -1331,7 +1331,7 @@ class PlanningPage {
                     <p class="event-description">${event.description}</p>
                     <div class="event-meta">
                         <span class="event-location">📍 ${event.location}</span>
-                        <span class="event-time">${event.time}</span>
+                        <span class="event-time">⏰ ${event.time}</span>
                     </div>
                     ${event.link ? `<a href="${event.link}" target=”_blank” class="event-link">${event.link.includes('introkamp') ? 'Aanmelden' : 'Meer informatie'}</a>` : ''}
                 </div>
@@ -1354,7 +1354,7 @@ class PlanningPage {
                 <p class="timeline-description">${event.description}</p>
                 <div class="timeline-meta">
                     <span class="timeline-location">📍 ${event.location}</span>
-                    <span class="timeline-time">${event.time}</span>
+                    <span class="timeline-time">⏰ ${event.time}</span>
                 </div>
                 ${event.link ? `<a href="${event.link}" class="timeline-link">Meer informatie</a>` : ''}
             </div>

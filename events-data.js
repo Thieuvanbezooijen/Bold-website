@@ -56,16 +56,36 @@ const EVENTS_DATA = [
         time: '20:00-02:00',
         link: 'https://www.instagram.com/p/DRaokjQghOi',
     },
+  
     {
-        day: 18,
+        day: 22,
         month: 0,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
         year: 2026,
-        title: 'Placeholder',
-        description: 'Placeholder',
-        location: 'Placeholder',
-        time: '00:00-00:00',
-        link: 'img/placeholder1.png',
+        title: 'Nieuwjaarsborrel',
+        description: 'Trap t jaar af met een leuke borrel!',
+        location: 'Volgt nog',
+        time: '20:00-00:00',
+        // link: 'img/placeholder1.png',
     },
-    
+    {
+        day: 26,
+        month: 2,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+        year: 2026,
+        title: 'Carnavals Pubquiz',
+        description: 'Kom bij van carnaval met een gezellige quiz',
+        location: 'Cafe Vulling',
+        time: '20:00-00:00',
+        // link: 'img/placeholder1.png',
+    },
+    {
+        day: 12,
+        month: 3,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+        year: 2026,
+        title: 'Pizza & Spelletjes',
+        description: 'Een gezellige avond vol eten, spelletjes, en gezelligheid!',
+        location: 'Op cmd!',
+        time: 'Volgt nog',
+        // link: 'img/placeholder1.png',
+    },
 ];
 
