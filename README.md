@@ -14,7 +14,7 @@ Deze website is ontworpen met een minimalistisch zwart-wit kleurenschema en bied
 - **Planning** - Jaarplanning met kalender en timeline weergave
 - **Fotoboek** - Foto galerij met filtering op activiteit/jaar
 - **Leden** - Ledenlijst met thumbnail grid en detail weergave
-- **Donaties** - Donatie pagina met betaalintegratie
+- <!-- **Donaties** - Donatie pagina met betaalintegratie -->
 - **Contact** - Contactformulier voor professionele contacten
 
 ### Technische Features
@@ -40,7 +40,7 @@ Bold website 2/
 ├── planning.html           # Jaarplanning pagina
 ├── fotoboek.html           # Foto galerij pagina
 ├── leden.html              # Ledenlijst pagina
-├── donaties.html           # Donaties pagina
+├── donaties.html           # Donaties pagina (temporarily disabled)
 ├── contact.html            # Contact pagina
 ├── styles.css              # Hoofd CSS bestand
 ├── script.js               # Hoofd JavaScript bestand

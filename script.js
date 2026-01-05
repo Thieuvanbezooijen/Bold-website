@@ -16,6 +16,9 @@ class Navigation {
     }
     
     init() {
+        // Set active navigation link based on current page
+        this.setActiveNavLink();
+        
         // Mobile menu toggle
         if (this.hamburger) {
             this.hamburger.addEventListener('click', () => this.toggleMobileMenu());
@@ -54,6 +57,31 @@ class Navigation {
         
         // Handle page load - fade in
         this.handlePageLoad();
+    }
+    
+    setActiveNavLink() {
+        // Get current page filename
+        let currentPage = window.location.pathname.split('/').pop();
+        
+        // Handle root path or empty path - treat as index.html
+        if (!currentPage || currentPage === '') {
+            currentPage = 'index.html';
+        }
+        
+        // Remove active class from all nav links
+        this.navLinks.forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+        });
+        
+        // Find and activate the link that matches current page
+        this.navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPage) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
     }
     
     isInternalLink(href) {
@@ -1841,7 +1869,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new Gallery();
     new MemberModal();
     new MemberFiltering();
-    new DonationForm();
+    // new DonationForm();
     new FAQ();
     new PlanningPage();
     new GridItemModal();
