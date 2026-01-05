@@ -69,7 +69,7 @@ const EVENTS_DATA = [
     },
     {
         day: 26,
-        month: 2,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+        month: 1,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
         year: 2026,
         title: 'Carnavals Pubquiz',
         description: 'Kom bij van carnaval met een gezellige quiz',
@@ -79,7 +79,7 @@ const EVENTS_DATA = [
     },
     {
         day: 12,
-        month: 3,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+        month: 2,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
         year: 2026,
         title: 'Pizza & Spelletjes',
         description: 'Een gezellige avond vol eten, spelletjes, en gezelligheid!',
