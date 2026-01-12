@@ -63,7 +63,7 @@ const EVENTS_DATA = [
         year: 2026,
         title: 'Nieuwjaarsborrel',
         description: 'Trap t jaar af met een leuke borrel!',
-        location: 'Volgt nog',
+        location: 'Bruine Pij',
         time: '20:00-00:00',
         // link: 'img/placeholder1.png',
     },
