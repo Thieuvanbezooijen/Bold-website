@@ -26,47 +26,49 @@ const EVENTS_DATA = [
     // time: '20:00-00:00',             // Time or duration (e.g., '14:00-17:00', 'Hele dag', '3 dagen')
     // link: 'https://www.facebook.com/media/set/?set=a.1229739325860933&type=3'            // Optional: link to event page (leave empty string '' if no link)
     // }, 
-    {
-        day: 13,
-        month: 10,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
-        year: 2025,
-        title: 'Sinterklaas Pubquiz',
-        description: 'Een klassieke pubquiz met een zoete prijs 👀',
-        location: 'Cafe Vulling',
-        time: '20-00-22:00',
-        link: 'https://www.facebook.com/media/set/?set=a.1265868255581373&type=3'  ,
-    },
-    {
-        day: 27,
-        month: 10,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
-        year: 2025,
-        title: 'Kroegentocht',
-        description: 'Een gezellige avond bomvol deals 🤑',
-        location: 'Binnenstad Breda',
-        time: '20:00-01:00',
-        link: 'https://www.facebook.com/media/set/?set=a.1269588255209373&type=3',
-    },
-    {
-        day: 18,
-        month: 11,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
-        year: 2025,
-        title: 'Kerstgala',
-        description: 'HET feest van het jaar!🎉',
-        location: 'De Avenue',
-        time: '20:00-02:00',
-        link: 'https://www.instagram.com/p/DRaokjQghOi',
-    },
-  
-    {
-        day: 22,
-        month: 0,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
-        year: 2026,
-        title: 'Nieuwjaarsborrel',
-        description: 'Trap t jaar af met een leuke borrel!',
-        location: 'Bruine Pij',
-        time: '20:00-00:00',
-        // link: 'img/placeholder1.png',
-    },
+
+
+// {
+//     day: 13,
+//     month: 10,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+//     year: 2025,
+//     title: 'Sinterklaas Pubquiz',
+//     description: 'Een klassieke pubquiz met een zoete prijs 👀',
+//     location: 'Cafe Vulling',
+//     time: '20-00-22:00',
+//     link: 'https://www.facebook.com/media/set/?set=a.1265868255581373&type=3'  ,
+// },
+// {
+//     day: 27,
+//     month: 10,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+//     year: 2025,
+//     title: 'Kroegentocht',
+//     description: 'Een gezellige avond bomvol deals 🤑',
+//     location: 'Binnenstad Breda',
+//     time: '20:00-01:00',
+//     link: 'https://www.facebook.com/media/set/?set=a.1269588255209373&type=3',
+// },
+// {
+//     day: 18,
+//     month: 11,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+//     year: 2025,
+//     title: 'Kerstgala',
+//     description: 'HET feest van het jaar!🎉',
+//     location: 'De Avenue',
+//     time: '20:00-02:00',
+//     link: 'https://www.instagram.com/p/DRaokjQghOi',
+// },
+
+// {
+//     day: 22,
+//     month: 0,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+//     year: 2026,
+//     title: 'Nieuwjaarsborrel',
+//     description: 'Trap t jaar af met een leuke borrel!',
+//     location: 'Bruine Pij',
+//     time: '20:00-00:00',
+//     // link: 'img/placeholder1.png',
+// },
     {
         day: 26,
         month: 1,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
@@ -83,9 +85,21 @@ const EVENTS_DATA = [
         year: 2026,
         title: 'Pizza & Spelletjes',
         description: 'Een gezellige avond vol eten, spelletjes, en gezelligheid!',
-        location: 'Op cmd!',
+        location: 'Op CMD!',
         time: 'Volgt nog',
         // link: 'img/placeholder1.png',
     },
+	 {
+        day: 26,
+        month: 2,      // September (0=Jan, 1=Feb, ..., 8=Sep, ..., 11=Dec)
+        year: 2026,
+        title: 'Kroegentocht',
+        description: 'Een heerlijk avondje bomvol deals en gezelligheid!',
+        location: 'Binnenstad Breda',
+        time: 'Volgt nog',
+        // link: 'img/placeholder1.png',
+    },
+	
+	
 ];
 
